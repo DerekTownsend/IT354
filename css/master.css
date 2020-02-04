@@ -1,5 +1,234 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Palanquin&display=swap');
+
+/* body {
+  font-family: 'Palanquin', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Roboto', sans-serif;
+
+} */
+
 
 body {
-  font-family: 'Roboto', sans-serif;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  min-height:100vh;
+  /*padding-bottom: 8em;*/
+  font-family: Helvetica;
+  /*background-color:rgba(63,63,63,1);*/
+  z-index: 0;
+}
+main{
+  width:80%;
+  min-height:100vh;
+  margin: 8em auto 4em;
+  /*color:white;*/
+  border:solid black .1em;
+  /*background-color: black;*/
+  box-sizing: border-box;
+
+}
+main h1{
+  text-align: center;
+
+}
+.home p{
+  width: 50%;
+  font-size: 2em;
+  margin: 0;
+  padding: .5em 0;
+  color: white;
+  position: absolute;
+  bottom: 50%;
+  left: 25%;
+  text-align: center;
+}
+.home main{
+  width:100%;
+    margin: 6.5em auto 0;
+
+}
+
+.resume h2{
+  padding-left: 1em
+}
+.outer-list{
+  list-style: none;
+  padding:0 2em;
+}
+.inner-list{
+  list-style-type: disc;
+}
+.contact-info{
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+section{
+  padding: 1em;
+}
+.biography section p,
+.biography section ul{
+  list-style-type: none;
+  padding: 0;
+  padding-left: .5em;
+}
+nav {
+  margin: 0;
+  background-color: white;
+  position:fixed;
+  top: 0;
+  width:100%;
+  border-bottom:black solid .1em;
+  min-height: 6.5em;
+  z-index: 1;
+}
+ul.nav {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-around;*/
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+}
+ul.nav li {
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+nav img{
+  height: 3.4em;
+  margin: 0;
+}
+  ul.nav li:first-child{
+    margin-left: -1em;
+
+  }
+nav li:first-child{
+  padding: 0;
+}
+.icon{
+  display:none;
+}
+.nav button{
+  background:none;
+  color:black;
+  border:none;
+  font-size:1em;
+  padding:0;
+}
+.myIMG{
+  border:solid black .1em;
+  border-radius: 360px;
+  display: block;
+  margin: 0 auto;
+}
+footer {
+  display: flex;
+  width: 100%;
+  clear: both;
+  justify-content:space-around;
+  align-items:center;
+  min-height: 5em;
+  border-top: solid .1em;
+  position: relative;
+  bottom: 0;
+  background-color: white;
+}
+footer a{
+  color: black;
+}
+footer a:visited{
+  color:black;
+}
+ul.nav li:nth-child(2){
+  display: none;
+}
+
+.scrolling-background{
+  width: 100%;
+  height: 45em;
+  position: relative;
+
+}
+
+.background-one{
+  background:linear-gradient(rgba(255,255,255,.1),rgba(0,0,0,1)),url("../images/homepage.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
+}
+
+.background-two{
+  background:linear-gradient(rgba(255,255,255,.1),rgba(0,0,0,1)),url("../images/homepage2.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.background-three{
+  background:linear-gradient(rgba(255,255,255,.1),rgba(0,0,0,1)),url("../images/homepage3.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+@media screen and (max-width:900px){
+  ul.nav li{
+    display:none;
+  }
+
+  ul.nav{
+    flex-direction:column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  ul.nav li.icon{
+    display:block;
+    position:absolute;
+    padding: 0;
+    top:.5em;
+    right:0;
+  }
+  ul.nav li.icon button{
+    padding: .4em;
+    cursor:pointer;
+  }
+  ul.nav li:first-child {
+    display: block;
+    position:absolute;
+    top:0;
+    left:-1em;
+    margin-left: 0em;
+
+  }
+
+  ul.nav li:nth-child(2) {
+    margin-top: 3.24em;
+    padding-top: 0;
+    width: 100%;
+    text-align: center;
+    border-top: .05em grey solid;
+
+  }
+
+  ul.nav.responsive li{
+    display:block;
+  }
+
 }
