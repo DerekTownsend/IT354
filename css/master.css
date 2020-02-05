@@ -186,7 +186,10 @@ ul.nav li:nth-child(2){
   background-attachment: fixed;
   background-position: center;
 }
-
+iframe {
+  display: block;
+  margin: auto;
+}
 @media screen and (max-width:900px){
   ul.nav li{
     display:none;
