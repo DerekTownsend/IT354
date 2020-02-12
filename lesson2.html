@@ -45,193 +45,137 @@
     <h1>Lesson 2</h1>
     <section>
       <div>
-        <h2>Values and Types</h2>
-        <h3>Numbers</h3>
+        <h2>Functions</h2>
+        <h3>Named Functions</h3>
         <p>Numbers are pretty much exactly what you think they are. They are integers most often used to do calculations or keep track of a count.</p>
 
         <div class="codeSnippet">
           <code>
-            console.log(5) // 5 <br>
-            console.log(5.5) // 5.5 <br>
-            console.log(4e10) // 40000000000
+            function add(num1, num2){ <br>
+              return num1 + num2; <br>
+            } <br>
+
+            console.log(add(1,2)) // 3 <br>
           </code>
         </div>
 
-        <h3>Infinity and -Infinity</h3>
+        <h3>Function Expressions </h3>
         <p>These are unique values used to evaluate extremely large or small numbers. Infinity is the largest possible number that JS can store and -Infinity is the smallest.</p>
         <div class="codeSnippet">
           <code>
-            console.log(Infinity) //Infinity <br>
-            console.log(4e9900) //Infinity <br>
-            console.log(-Infinity) //-Infinity <br>
-            console.log(-4e9900) //-Infinity
+            const subtract = function(num1, num2){ <br>
+              return num1 - num2; <br>
+            } <br>
+
+            console.log(subtract(1,2)) // returns -1
+
           </code>
         </div>
 
-        <h3>NaN</h3>
+        <h3>Arrow Functions</h3>
         <p>NaN or Not a Number is used to categorize anything that isn't a number. This mostly is used when evaluating wether or not an input or data you recieve is a number or not.</p>
         <div class="codeSnippet">
           <code>
-            console.log(NaN) //NaN <br>
-            console.log(isNaN("Not Number")) //true <br>
-            console.log(isNaN(5)) //false
+            const divide = (num1, num2) => { <br>
+              return num1 / num2; <br>
+            } <br>
+            console.log(divide(1,2)) // returns 0.5 <br>
+
+            // can also be written <br>
+            const square = num1 => { <br>
+              return num1 ** 2 <br>
+            } <br>
+            console.log(square(2)) // 4 <br>
+
+            //  or <br>
+
+            const cube = num1 => num1 ** 3 <br>
+            console.log(cube(2)) // 8
           </code>
          </div>
-
-        <h3>Strings</h3>
-        <p>A string is essentially made up of characters and is they way that we store text in javascript.</p>
-        <div class="codeSnippet">
-           <code>
-            console.log("Hello") // "Hello" <br>
-            console.log('Hello World') // "Hello World" <br>
-            let world = "World!" <br>
-            console.log(`Hello, ${world}`) // "Hello, World!" br
-          </code>
-        </div>
         <hr>
       </div>
 
       <div>
-        <h2>Unary Operators</h2>
-        <h3>typeof</h3>
+        <h2>Other Topics</h2>
+        <h3>Optional Arguments</h3>
         <p>Essentially this returns what data type you have it evaluate.</p>
         <div class="codeSnippet">
           <code>
-            console.log(typeof 5) // Number <br>
-            console.log(typeof "5") // String <br>
-            console.log(typeof {}) // Object
+            function printName(firstName){ <br>
+              console.log(`Hello, ${firstName}!`) <br>
+            } <br>
+            printName("Dave",5,"forty") // "Hello, Dave!" Ignores Additional parameters and doesn't throw error <br>
+            printName() // "Hello, undefined!" because it requires a parameter otherwise undefined
           </code>
          </div>
 
-        <h3>Unary plus</h3>
+        <h3>Rest Parameters</h3>
         <p>This is your typical addition symbol. If you use it to add 2 numbers together it will return the sum of those numbers. If you have a string with a number inside of it and place the plus in front of the string it will return the string but
           now as a number. It can also be used to combine strings together. </p>
         <div class="codeSnippet">
            <code>
-            console.log(5+5) //10 <br>
-            console.log(+"5") //5 <br>
-            console.log(+"-5") //-5 <br>
-            console.log(1+"World") // "1World" <br>
-            console.log("World"+"wide") // "Worldwide"
+             function printNames(...names){ <br>
+               // takes all of the parameters entered and puts them into an array <br>
+               for (name of names){ <br>
+                 console.log(`Hello, ${name}!`) <br>
+               } <br>
+             } <br>
+             printNames("Dave","Jane", "John","Satania") <br>
+             // prints: <br>
+             // Hello, Dave! <br>
+             // Hello, Jane! <br>
+             // Hello, John! <br>
+             // Hello, Satania! <br>
+
+             // should be used at the end otherwise it takes assumes all parameters are part of the spread operator
           </code>
          </div>
-        <h3>Unary Minus</h3>
+        <h3>Scope</h3>
         <p>This is your typical subtraction symbol. If you use it to subtract 2 numbers together it will return the difference. If you have a string with a number inside of it and place the plus in front of the string it will return the string but
           now as a number and negate the value.</p>
         <div class="codeSnippet">
            <code>
-            console.log(5-5) //0 <br>
-            console.log(-"5") //-5 <br>
-            console.log(-"-5") //5
+             // Ex 1 <br>
+            let height = 2.1 <br>
+
+            function printHeight(height){ <br>
+              console.log(`You are ${height}cm tall`) <br>
+            } <br>
+            printHeight(1) // "You are 1cm tall" <br>
+             // Ex 2 <br>
+            const word = "confusion" <br>
+
+            function printMeaning(){ <br>
+              const meaning = "nil" <br>
+              console.log(`The meaning is ${meaning} and ${word}`) <br>
+            } <br>
+            printMeaning()// The meaning is nil and confusion <br>
+            console.log(`The meaning is ${meaning} and ${word}`) // will throw error meaning is not defined because outside scope
+
           </code>
          </div>
-        <h3>Logical Not</h3>
+        <h3>Nested Functions</h3>
         <p>An exclamation point used to negate its boolean value. If something is true it becomes false and vice versa. Most often used in loops if you want something to be done until the condition is no longer true.</p>
         <div class="codeSnippet">
           <code>
-            console.log(!true) //false <br>
-            console.log(!false) //true
-          </code>
-        </div>
-        <h3>Double Logical Notation</h3>
-        <p>Two exclamation points used to get the absolute boolean value. It essentially makes true equal true and false equal false. The numbers 1 and 0 are truthy and falsey respectively along with some other values and data types. If these values
-          are evaluated in a if statement or loop they will be the same as true and false. If you want to store the boolean value of one and zero you can use the Double Logical Notation.</p>
-        <div class="codeSnippet">
-          <code>
-            console.log(!!true) //true <br>
-            console.log(!!false) // false <br>
-            console.log(!!1) //true <br>
-            console.log(!!0) //false <br>
-            console.log(!!-1) //true <br>
-            console.log(!!2) //true
-          </code>
-        </div>
-        <h3>Increment</h3>
-        <p>This is two addition symbols usually before or after a variable. It will increase that variable's value by one and update the variable. </p>
-        <div class="codeSnippet">
-           <code>
-            let c = 4 <br>
-            console.log(++c) //5 <br>
-
-            for (let i=0; i <= c; i++){ <br>
-              console.log(i) <br>
+            function theWord(){ <br>
+              const word = "word" <br>
+              function everybodysHeard(){  <br>
+                const bird = "bird" <br>
+                return`That the ${bird} is the ${word}!` <br>
               } <br>
-              // Will print: <br>
-              // 0 <br>
-              // 1 <br>
-              // 2 <br>
-              // 3 <br>
-              // 4 <br>
-              // 5
-          </code>
-         </div>
-        <h3>Decrement</h3>
-        <p>This is two subtraction symbols usually before or after a variable. It will decrease that variable's value by one and update the variable.</p>
-        <div class="codeSnippet">
-          <code>
-            let c = 6 <br>
-            console.log(--c) //5 <br>
-
-            for (let i = c ; 0 <= i; i--){ <br>
-              console.log(i) <br>
-              } <br>
-              // Will print: <br>
-              // 5 <br>
-              // 4 <br>
-              // 3 <br>
-              // 2 <br>
-              // 1 <br>
-              // 0
-          </code>
-        </div>
-
-        <h3>Delete</h3>
-        <p>Delete is used to remove an attribute from an object and will return true if the object is deleted or if it never existed. If you try to call that object's attribute that you deleted it will return undefined</p>
-        <div class="codeSnippet">
-           <code>
-            const Enemy = { <br>
-            firstName: 'Micheal', <br>
-            lastName: 'Alfred' <br>
+              return everybodysHeard() <br>
             } <br>
-            console.log(Enemy.firstName) //Micheal <br>
-            console.log(delete Enemy.firstName) //true <br>
-            console.log(Enemy.firstName) // undefinded <br>
-            console.log(delete Enemy.yeet) //true
+            console.log(theWord()) // That the bird is the word!
           </code>
         </div>
-        <hr>
       </div>
-
+      <hr>
       <div>
-        <h2>Hoisting</h2>
-        <p>Hoisting is when during the compilation and processing of your code it takes all of your declarations for your variables using var and named functions and moves them to the top. It is done so that you won't get any variable undefined
-          issues, but can also cause some errors. If you have variables with the same name you might end up using the wrong values for your functions. To fix those errors we now use let and const along with function expressions to stop js from doing
-          this.</p>
-        <div class="codeSnippet">
-          <code>
-            // Using var for declarations and normal named functions <br>
-            print() // will run the function just fine <br>
-            function print() { <br>
-            console.log(statement) // will print undefined because it has been declared but not instantiated. <br>
-            var statement = "Hello World" <br>
-            console.log(statement) // will print "Hello World" <br>
-            } <br>
-            print() // will run the function just fine <br> <br>
-
-            // Using let and const for declarations and function expressions <br>
-            print() // will give variable not defined error <br>
-            const print = function(){ <br>
-            console.log(statement) // will give variable not defined error <br>
-            let statement = "Hello World" <br>
-            console.log(statement) // will print "Hello World" <br>
-            } <br>
-            print()// will run the function just fine
-
-          </code>
-        </div>
-        <hr>
+        <h2>Video Summary</h2>
+        <iframe src="https://www.youtube.com/embed/NFcE673GdNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <iframe src="https://www.youtube.com/embed/NFcE673GdNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
   </main>
 
