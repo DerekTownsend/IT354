@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lesson 2</title>
+  <link rel="stylesheet" href="css/master.css" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo(favicon).png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <h2>Lesson 2</h2>
+  <header>
+
+    <nav>
+
+      <ul class="nav" id="myTopNav">
+        <li>
+          <a href="index.html">
+            <img src="images/logo.svg" class="nav-logo" alt="logo">
+          </a>
+        </li>
+        <li></li>
+        <li class="active">
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="lesson1.html">Lesson 1</a>
+        </li>
+        <li>
+          <a href="lesson2.html">Lesson 2</a>
+        </li>
+        <li id="icon" class="icon">
+          <button>&#9776;</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Lesson 2</h1>
+    <section>
+      <div>
+        <h2>Values and Types</h2>
+        <h3>Numbers</h3>
+        <p>Numbers are pretty much exactly what you think they are. They are integers most often used to do calculations or keep track of a count.</p>
+
+        <div class="codeSnippet">
+          <code>
+            console.log(5) // 5 <br>
+            console.log(5.5) // 5.5 <br>
+            console.log(4e10) // 40000000000
+          </code>
+        </div>
+
+        <h3>Infinity and -Infinity</h3>
+        <p>These are unique values used to evaluate extremely large or small numbers. Infinity is the largest possible number that JS can store and -Infinity is the smallest.</p>
+        <div class="codeSnippet">
+          <code>
+            console.log(Infinity) //Infinity <br>
+            console.log(4e9900) //Infinity <br>
+            console.log(-Infinity) //-Infinity <br>
+            console.log(-4e9900) //-Infinity
+          </code>
+        </div>
+
+        <h3>NaN</h3>
+        <p>NaN or Not a Number is used to categorize anything that isn't a number. This mostly is used when evaluating wether or not an input or data you recieve is a number or not.</p>
+        <div class="codeSnippet">
+          <code>
+            console.log(NaN) //NaN <br>
+            console.log(isNaN("Not Number")) //true <br>
+            console.log(isNaN(5)) //false
+          </code>
+         </div>
+
+        <h3>Strings</h3>
+        <p>A string is essentially made up of characters and is they way that we store text in javascript.</p>
+        <div class="codeSnippet">
+           <code>
+            console.log("Hello") // "Hello" <br>
+            console.log('Hello World') // "Hello World" <br>
+            let world = "World!" <br>
+            console.log(`Hello, ${world}`) // "Hello, World!" br
+          </code>
+        </div>
+        <hr>
+      </div>
+
+      <div>
+        <h2>Unary Operators</h2>
+        <h3>typeof</h3>
+        <p>Essentially this returns what data type you have it evaluate.</p>
+        <div class="codeSnippet">
+          <code>
+            console.log(typeof 5) // Number <br>
+            console.log(typeof "5") // String <br>
+            console.log(typeof {}) // Object
+          </code>
+         </div>
+
+        <h3>Unary plus</h3>
+        <p>This is your typical addition symbol. If you use it to add 2 numbers together it will return the sum of those numbers. If you have a string with a number inside of it and place the plus in front of the string it will return the string but
+          now as a number. It can also be used to combine strings together. </p>
+        <div class="codeSnippet">
+           <code>
+            console.log(5+5) //10 <br>
+            console.log(+"5") //5 <br>
+            console.log(+"-5") //-5 <br>
+            console.log(1+"World") // "1World" <br>
+            console.log("World"+"wide") // "Worldwide"
+          </code>
+         </div>
+        <h3>Unary Minus</h3>
+        <p>This is your typical subtraction symbol. If you use it to subtract 2 numbers together it will return the difference. If you have a string with a number inside of it and place the plus in front of the string it will return the string but
+          now as a number and negate the value.</p>
+        <div class="codeSnippet">
+           <code>
+            console.log(5-5) //0 <br>
+            console.log(-"5") //-5 <br>
+            console.log(-"-5") //5
+          </code>
+         </div>
+        <h3>Logical Not</h3>
+        <p>An exclamation point used to negate its boolean value. If something is true it becomes false and vice versa. Most often used in loops if you want something to be done until the condition is no longer true.</p>
+        <div class="codeSnippet">
+          <code>
+            console.log(!true) //false <br>
+            console.log(!false) //true
+          </code>
+        </div>
+        <h3>Double Logical Notation</h3>
+        <p>Two exclamation points used to get the absolute boolean value. It essentially makes true equal true and false equal false. The numbers 1 and 0 are truthy and falsey respectively along with some other values and data types. If these values
+          are evaluated in a if statement or loop they will be the same as true and false. If you want to store the boolean value of one and zero you can use the Double Logical Notation.</p>
+        <div class="codeSnippet">
+          <code>
+            console.log(!!true) //true <br>
+            console.log(!!false) // false <br>
+            console.log(!!1) //true <br>
+            console.log(!!0) //false <br>
+            console.log(!!-1) //true <br>
+            console.log(!!2) //true
+          </code>
+        </div>
+        <h3>Increment</h3>
+        <p>This is two addition symbols usually before or after a variable. It will increase that variable's value by one and update the variable. </p>
+        <div class="codeSnippet">
+           <code>
+            let c = 4 <br>
+            console.log(++c) //5 <br>
+
+            for (let i=0; i <= c; i++){ <br>
+              console.log(i) <br>
+              } <br>
+              // Will print: <br>
+              // 0 <br>
+              // 1 <br>
+              // 2 <br>
+              // 3 <br>
+              // 4 <br>
+              // 5
+          </code>
+         </div>
+        <h3>Decrement</h3>
+        <p>This is two subtraction symbols usually before or after a variable. It will decrease that variable's value by one and update the variable.</p>
+        <div class="codeSnippet">
+          <code>
+            let c = 6 <br>
+            console.log(--c) //5 <br>
+
+            for (let i = c ; 0 <= i; i--){ <br>
+              console.log(i) <br>
+              } <br>
+              // Will print: <br>
+              // 5 <br>
+              // 4 <br>
+              // 3 <br>
+              // 2 <br>
+              // 1 <br>
+              // 0
+          </code>
+        </div>
+
+        <h3>Delete</h3>
+        <p>Delete is used to remove an attribute from an object and will return true if the object is deleted or if it never existed. If you try to call that object's attribute that you deleted it will return undefined</p>
+        <div class="codeSnippet">
+           <code>
+            const Enemy = { <br>
+            firstName: 'Micheal', <br>
+            lastName: 'Alfred' <br>
+            } <br>
+            console.log(Enemy.firstName) //Micheal <br>
+            console.log(delete Enemy.firstName) //true <br>
+            console.log(Enemy.firstName) // undefinded <br>
+            console.log(delete Enemy.yeet) //true
+          </code>
+        </div>
+        <hr>
+      </div>
+
+      <div>
+        <h2>Hoisting</h2>
+        <p>Hoisting is when during the compilation and processing of your code it takes all of your declarations for your variables using var and named functions and moves them to the top. It is done so that you won't get any variable undefined
+          issues, but can also cause some errors. If you have variables with the same name you might end up using the wrong values for your functions. To fix those errors we now use let and const along with function expressions to stop js from doing
+          this.</p>
+        <div class="codeSnippet">
+          <code>
+            // Using var for declarations and normal named functions <br>
+            print() // will run the function just fine <br>
+            function print() { <br>
+            console.log(statement) // will print undefined because it has been declared but not instantiated. <br>
+            var statement = "Hello World" <br>
+            console.log(statement) // will print "Hello World" <br>
+            } <br>
+            print() // will run the function just fine <br> <br>
+
+            // Using let and const for declarations and function expressions <br>
+            print() // will give variable not defined error <br>
+            const print = function(){ <br>
+            console.log(statement) // will give variable not defined error <br>
+            let statement = "Hello World" <br>
+            console.log(statement) // will print "Hello World" <br>
+            } <br>
+            print()// will run the function just fine
+
+          </code>
+        </div>
+        <hr>
+      </div>
+      <iframe src="https://www.youtube.com/embed/NFcE673GdNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/derektownsend" target="_blank">
+      <i class="fab fa-github fa-4x"></i>
+    </a>
+    <a href="https://linkedin.com/in/derek-townsend-10697012a" target="_blank">
+      <i class="fab fa-linkedin fa-4x"></i>
+    </a>
+    <a href="mailto:derek@coderspace.org" target="_blank">
+      <i class="fas fa-envelope fa-4x"></i>
+    </a>
+  </footer>
+  <script src="js/master.js"></script>
+</body>
+
+</html>
