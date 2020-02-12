@@ -47,7 +47,7 @@
       <div>
         <h2>Functions</h2>
         <h3>Named Functions</h3>
-        <p>Numbers are pretty much exactly what you think they are. They are integers most often used to do calculations or keep track of a count.</p>
+        <p>Name functions are functions that that have names. They are declared using the function declaration followed by the name of the function. It is the most basic way to create a function. </p>
 
         <div class="codeSnippet">
           <code>
@@ -60,7 +60,7 @@
         </div>
 
         <h3>Function Expressions </h3>
-        <p>These are unique values used to evaluate extremely large or small numbers. Infinity is the largest possible number that JS can store and -Infinity is the smallest.</p>
+        <p>These are used to help integrate the usefulness of let and const. Let and const helped stop the problems that hoisting can cause and if you wanted a named function it would get hoisted. Function expressions stop hoisting and makes your code an  bit more modularized.</p>
         <div class="codeSnippet">
           <code>
             const subtract = function(num1, num2){ <br>
@@ -73,7 +73,7 @@
         </div>
 
         <h3>Arrow Functions</h3>
-        <p>NaN or Not a Number is used to categorize anything that isn't a number. This mostly is used when evaluating wether or not an input or data you recieve is a number or not.</p>
+        <p>One of the newer addtions to JS and it is very similar to function expressions except that it allows you to condense your code down and maintain your scope of this. We haven't really covered what this is but I will just stay away from it because it is very confusion to explain. It helps you condense your code because you can you can get rid of the parentheses if you have one variable and also remove your return statement and curly braces if it is only one line/ your return statement is your only line of code.  </p>
         <div class="codeSnippet">
           <code>
             const divide = (num1, num2) => { <br>
@@ -99,7 +99,7 @@
       <div>
         <h2>Other Topics</h2>
         <h3>Optional Arguments</h3>
-        <p>Essentially this returns what data type you have it evaluate.</p>
+        <p>Javascript ignores everything extra that you put in your function call. If you only accept one parameter in a function, but when you make the call you accidentially put in two it will only pay attention to the first. </p>
         <div class="codeSnippet">
           <code>
             function printName(firstName){ <br>
@@ -111,8 +111,7 @@
          </div>
 
         <h3>Rest Parameters</h3>
-        <p>This is your typical addition symbol. If you use it to add 2 numbers together it will return the sum of those numbers. If you have a string with a number inside of it and place the plus in front of the string it will return the string but
-          now as a number. It can also be used to combine strings together. </p>
+        <p>Essentially this lets you take in as many parameters as you want and puts them into an array to be processed. Good for batch processing/doing a very repeatable and reliable action over and over again. </p>
         <div class="codeSnippet">
            <code>
              function printNames(...names){ <br>
@@ -132,8 +131,7 @@
           </code>
          </div>
         <h3>Scope</h3>
-        <p>This is your typical subtraction symbol. If you use it to subtract 2 numbers together it will return the difference. If you have a string with a number inside of it and place the plus in front of the string it will return the string but
-          now as a number and negate the value.</p>
+        <p>Scope is what your function/code has access to. What can variables can your function access at any time. Variables defined within functions can't be accessed out side the fuctions(without returning them or other methods), but variables declared outside of the function can be accessed by the function(most of the time).</p>
         <div class="codeSnippet">
            <code>
              // Ex 1 <br>
@@ -156,7 +154,7 @@
           </code>
          </div>
         <h3>Nested Functions</h3>
-        <p>An exclamation point used to negate its boolean value. If something is true it becomes false and vice versa. Most often used in loops if you want something to be done until the condition is no longer true.</p>
+        <p>These are functions that return other functions or have other functions within itself. Very useful when it comes to languages like React which relies hevily on this/higher order functions.</p>
         <div class="codeSnippet">
           <code>
             function theWord(){ <br>
@@ -174,7 +172,7 @@
       <hr>
       <div>
         <h2>Video Summary</h2>
-        <iframe src="https://www.youtube.com/embed/NFcE673GdNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/_kmxOEy7bHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </section>
   </main>
