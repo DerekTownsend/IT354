@@ -243,5 +243,11 @@ iframe {
   ul.nav.responsive li{
     display:block;
   }
+  .home p{
+    font-size: 1.2em;
+  }
+  .codeSnippet{
+    width: 90%;
+  }
 
 }
