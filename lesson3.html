@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lesson 3</title>
+  <link rel="stylesheet" href="css/master.css" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo(favicon).png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <h2>Lesson 3</h2>
+  <header>
+
+    <nav>
+
+      <ul class="nav" id="myTopNav">
+        <li>
+          <a href="index.html">
+            <img src="images/logo.svg" class="nav-logo" alt="logo">
+          </a>
+        </li>
+        <li></li>
+        <li class="active">
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="lesson1.html">Lesson 1</a>
+        </li>
+        <li>
+          <a href="lesson2.html">Lesson 2</a>
+        </li>
+        <li>
+          <a href="lesson3.html">Lesson 3</a>
+        </li>
+        <li>
+          <a href="article1.html">Article 1</a>
+        </li>
+        <li>
+          <a href="article2.html">Article 2</a>
+        </li>
+        <li id="icon" class="icon">
+          <button>&#9776;</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Lesson 3</h1>
+    <section>
+      <div>
+        <h2>Objects</h2>
+        <p>Objects are what we use to store information about something specific with multiple characteristics that may fit under multiple data types. An object is surrounded in curly braces or "{ }" and has a key value pair that is structured {key:value}. Each key and value are seperated by commas. There are multiple ways to declare/create objects.</p>
+        <h3>New Object Declaration and Dot Notation</h3>
+        <p>The new object declarations is a very basic way of creating an empty object that you can then later add on to and manipulate. You can add key value pairs by using dot notation or bracket notation. With dot notation you take the name of the variable referencing the new object created and put a "." and the name of the key and set it equal to the value you want that key to refer to.</p>
+        <div class="codeSnippet">
+          <pre><code>
+const airplane = new Object()
+
+airplane.technicalName = "Fairchild Republic A-10 Thunderbolt II"
+airplane.nickname = "A10 Warthog"
+airplane.knownFor = "going BRRRRRRTTTTTTTTTTT"
+
+airplane.showDetails = function(){
+  console.log(`I am the ${this.technicalName} also known as ${this.nickname} and I am known for ${this.knownFor}.`)
+}
+
+airplane.showDetails()
+ // I am the Fairchild Republic A-10 Thunderbolt II also known as A10 Warthog and I am known for going BRRRRRRTTTTTTTTTTT.
+          </code></pre>
+        </div>
+        <h3>Bracket Notation</h3>
+        <p>Bracket notation is similar to dot notation except that you can now call variables within the brackets and you can't declare functions using bracket notation. At least not the same way with dot notation.</p>
+        <div class="codeSnippet">
+          <pre><code>
+const airplane = new Object()
+
+airplane["technicalName"] = "Fairchild Republic A-10 Thunderbolt II"
+airplane["nickname"] = "A10 Warthog"
+airplane["knownFor"] = "going BRRRRRRTTTTTTTTTTT"
+
+// doesn't work
+ airplane["showDetails"] = function() {
+   console.log(`I am the ${this.technicalName} also known as ${this.nickname} and I am known for ${this.knownFor}.`)
+ }
+
+// does work
+ const temp = function(){
+    console.log(`I am the ${this.technicalName} also known as ${this.nickname} and I am known for ${this.knownFor}.`)
+}
+airplane["showDetails"] = temp
+
+airplane.showDetails()
+// I am the Fairchild Republic A-10 Thunderbolt II also known as  A10 Warthog and I am known for going BRRRRRRTTTTTTTTTTT.
+        </code></pre>
+        </div>
+
+        <h3>Object Literals</h3>
+        <p>Object literals are you expliclty typing out your key and value pairs within the brackets. It is the most simple and common (in my opinion) way to create basic objects. In order to add functions to an object you use the "get" keyword before the function.</p>
+        <div class="codeSnippet">
+          <pre><code>
+const userInfo = {
+    firstName: "Micheal",
+    lastName: "Alfred",
+    get intro() {
+    console.log(`My name is ${this.firstName} ${this.lastName}`)
+  }
+}
+
+userInfo.intro
+//My name is Micheal Alfred
+
+console.log(userInfo.firstName,userInfo.lastName)
+// Micheal Alfred
+
+          </code></pre>
+         </div>
+
+        <h3>Object Constructors</h3>
+        <p>Uses a function to create an object and all of its key and value pairs. Hints at some of the underlying JavaScript in Classes. </p>
+        <div class="codeSnippet">
+          <pre><code>
+function User(name, email, dobMonth, dobDay, dobYea
+  this.id = Math.floor(Math.random() * 100) + 1
+  this.name = name
+  this.email = email
+  this.dobMonth = dobMonth
+  this.dobDay = dobDay
+  this.dobYear = dobYear
+
+  this.intro = function(){
+    console.log(`Hello I'm ${this.name}. I was born ${this.dobMonth}/${this.dobDay}/${dobYear}. You can reach me at ${this.email}.`)
+  }
+
+}
+
+const user1 = new User("Micheal", "micheal@gmail.com",1,2,1998)
+
+user1.intro()
+//Hello I'm Micheal. I was born 1/2/1998. You can reach me at micheal@gmail.com.
+          </code></pre>
+         </div>
+
+        <h3>Classes</h3>
+        <p>Classes are essentially JavaScript objects that have some more functionality and syntactic sugar. Syntactic sugar is something added that makes the code more readable for developers. </p>
+        <div class="codeSnippet">
+           <pre><code>
+class Rectangle {
+
+ constructor(height, width){
+   this.height = height
+   this.width = width
+ }
+
+ findPerimeter(){
+   return (2*this.height) + (2*this.width)
+ }
+
+ findArea(){
+   return this.height * this.width
+ }
+}
+const rectangle1 = new Rectangle(8,9,)
+
+console.log(rectangle1.findPerimeter()) //
+console.log(rectangle1.findArea()) //
+          </code></pre>
+         </div>
+      </div>
+      <hr>
+      <div>
+        <h2>Video Summary</h2>
+        <!-- <iframe src="https://www.youtube.com/embed/_kmxOEy7bHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br> -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/derektownsend" target="_blank">
+      <i class="fab fa-github fa-4x"></i>
+    </a>
+    <a href="https://linkedin.com/in/derek-townsend-10697012a" target="_blank">
+      <i class="fab fa-linkedin fa-4x"></i>
+    </a>
+    <a href="mailto:derek@coderspace.org" target="_blank">
+      <i class="fas fa-envelope fa-4x"></i>
+    </a>
+  </footer>
+  <script src="js/master.js"></script>
+</body>
+
+</html>

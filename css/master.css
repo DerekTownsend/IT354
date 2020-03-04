@@ -137,10 +137,19 @@ nav li:first-child{
 .codeSnippet{
   display: block;
   border:solid #114B5F .1em;
-  width: 50%;
+  width: 65%;
   padding: .5em;
   margin: 0 auto;
   border-radius: .5em;
+  background-color: black;
+  color: green;
+}
+pre {
+ white-space: pre-wrap;
+ white-space: -moz-pre-wrap;  
+ white-space: -pre-wrap;
+ white-space: -o-pre-wrap;
+ word-wrap: break-word;
 }
 
 footer {
