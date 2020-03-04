@@ -25,7 +25,7 @@ body {
 main{
   width:80%;
   min-height:100vh;
-  margin: 4em auto 4em;
+  margin: 6em auto 4em;
   /*color:white;*/
   border:solid #114B5F .1em;
   /*background-color: #114B5F;*/
@@ -146,7 +146,7 @@ nav li:first-child{
 }
 pre {
  white-space: pre-wrap;
- white-space: -moz-pre-wrap;  
+ white-space: -moz-pre-wrap;
  white-space: -pre-wrap;
  white-space: -o-pre-wrap;
  word-wrap: break-word;
