@@ -209,6 +209,39 @@ iframe {
   height: 720px;
 
 }
+.lesson-nav{
+  /* display: flex; */
+  /* border-bottom: solid #114B5F .1em; */
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  padding: 0;
+  width: 80%;
+  margin: 6em auto -6em;
+  min-height: 2.2em;
+}
+.lesson-nav li{
+  display: inline;
+  list-style: none;
+  border-top: .1em solid #114B5F;
+  border-left: .1em solid #114B5F;
+  border-right: .1em solid #114B5F;
+  text-decoration: none;
+  padding: .5em;
+  margin-bottom: .5em;
+  color: #ff0;
+
+}
+.lesson-nav a{
+  text-decoration: none;
+  color: #114B5F;
+}
+#active{
+  background-color: #114B5F;
+}
+#active a{
+  color: white;
+}
+
 @media screen and (max-width:900px){
   ul.nav li{
     display:none;
