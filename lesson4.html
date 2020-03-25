@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>A brief history of ECMAScript</title>
+  <title>Lesson 4</title>
   <link rel="stylesheet" href="css/master.css" type="text/css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="images/logo(favicon).png">
@@ -63,25 +63,74 @@
     </nav>
   </header>
   <ul class="lesson-nav">
-    <li id="active"><a href="article1.html">History of ECMAScript</a></li>
-    <li><a href="article2.html">Responsive Design</a></li>
-    <li><a href="article3.html">Microservices vs. Monolith</a></li>
+    <li><a href="lesson1.html">Values and Types</a></li>
+    <li><a href="lesson2.html">Functions</a></li>
+    <li><a href="lesson3.html">Objects</a></li>
+    <li id="active"><a href="lesson4.html">Prototypal Inheritance</a></li>
   </ul>
   <main>
-    <h1>A Brief History of ECMAScript</h1>
+    <h1>Lesson 4</h1>
     <section>
-      <div class="article">
-        <p>So from my basic understanding of ECMAscript is that it is the standards and common practices for Javascript. ECMAscript essentially dictates the way that that javascript should be written, what built in functions currently exist, and what features might be added in the future. An important change that was made was the inclusion of let, const, and arrow function which I talk about in lessons 1 and 2 of this site. This inclusion along with other changes made at that time changed the way that we wrote javascript and helped improve a lot of frameworks. </p>
+      <div>
+        <h2>Prototypal Inheritance</h2>
+        <p></p>
+        <h3>This</h3>
+        <p></p>
+        <h3>Syntactic Sugar</h3>
+        <p></p>
+        <div class="codeSnippet">
+          <pre><code>
+class Dog{
+  constructor(name){
+    this.name = name
+  }
+  bark(){
+    console.log(`${this.name} barks`)
+  }
+}
 
-        <p>There have been 10 versions of ECMAscript release since JavaScript's creation in 1995. The most current version being the 2019 version. The big changes I mentioned earlier were mentioned in the ES6 version. One of the changes I excluded were class declarations making the language far more viable for object oriented programming. JavaScript did have ways of doing it previously but they were a bit more tedious and visulally unappealing. It still revolves around protypical inheritance, but it is more hidden and less obvious. The organization that dictates ECMAScript standards are TC39 which is made up of industry giants that the language's current state affects most and standardized by ECMA International. </p>
+function Cat(name){
+  this.name = name
+}
+Cat.prototype.meow = function meow(){
+    console.log(`${this.name} meows`)
+}
 
-        <div class="sources">
-          <ul>
-            <h2>References:</h2>
-            <li><a href="https://flaviocopes.com/ecmascript/">The Complete ECMAScript 2015-2019 Guide</a></li>
-          </ul>
+let dog = new Dog("Daniel")
+dog.bark() // "Daniel barks"
+let cat = new Cat("Mavis")
+cat.meow() // "Mavis meows"
+          </code></pre>
         </div>
+        <h3>Global Scope</h3>
+        <p></p>
+        <div class="codeSnippet">
+          <pre><code>
+//Within Node
+console.log(window === this) // false
+a = "Global"
+console.log(this.a) // "Global"
+        </code></pre>
+        </div>
+
+        <h3>Window Scope</h3>
+        <p></p>
+        <div class="codeSnippet">
+          <pre><code>
+//In window
+a = "Window"
+console.log(window === this) //true
+console.log(window.a) // "Window"
+console.log(this.a) // "Window"
+          </code></pre>
+         </div>
       </div>
+      <hr>
+      <div>
+        <h2>Video Summary</h2>
+        <iframe src="https://www.youtube.com/embed/O0WJQFJgrPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+      </div>
+      <!-- <h3>Working on new navigation in a codepen should be ready by next lesson/article</h3> -->
     </section>
   </main>
 
