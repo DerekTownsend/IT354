@@ -73,9 +73,9 @@
     <section>
       <div>
         <h2>Prototypal Inheritance</h2>
-        <p></p>
+        <p>The back bone of JS classes and objects. Allows for us to create functions within classes that still maintain the classes scope of "this". Also allows for us to build out more functionality for other classes. Helped make object oriented programming more viable and widely accepted.</p>
         <h3>This</h3>
-        <p></p>
+        <p>A JS keyword that allows for you to refer to a specific object/window/node's attributes, values, and functions. Very useful if you will to access certain variables or functions that are nested within a class.</p>
         <h3>Syntactic Sugar</h3>
         <p></p>
         <div class="codeSnippet">
@@ -103,7 +103,7 @@ cat.meow() // "Mavis meows"
           </code></pre>
         </div>
         <h3>Global Scope</h3>
-        <p></p>
+        <p>The global scope refers to all things with in the JS node. If a variable is stored on the global scope it can be accessed by any JS files within the same scope. To store a variable on the global scope you simply set the variable equal to the object or value that you want to be tracked. Not reccommended to store variables here.</p>
         <div class="codeSnippet">
           <pre><code>
 //Within Node
@@ -114,9 +114,11 @@ console.log(this.a) // "Global"
         </div>
 
         <h3>Window Scope</h3>
-        <p></p>
+        <p>The window scope refers to everything within the browsers window. Not reccommended to store variables here.</p>
         <div class="codeSnippet">
           <pre><code>
+//Within Node
+window.a = "Window"
 //In window
 a = "Window"
 console.log(window === this) //true
@@ -130,7 +132,6 @@ console.log(this.a) // "Window"
         <h2>Video Summary</h2>
         <iframe src="https://www.youtube.com/embed/O0WJQFJgrPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
       </div>
-      <!-- <h3>Working on new navigation in a codepen should be ready by next lesson/article</h3> -->
     </section>
   </main>
 
