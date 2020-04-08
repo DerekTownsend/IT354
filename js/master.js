@@ -22,6 +22,8 @@ function navigation() {
       hiddenItems[0].classList.add("lesson-items");
     } else{
       hiddenItems[0].style.display = "block";
+      hiddenItems[1].style.display = "none";
+      hiddenItems[1].classList.add("article-items");
       hiddenItems[0].classList.remove("lesson-items");
     }
   });
@@ -32,6 +34,8 @@ function navigation() {
       hiddenItems[1].classList.add("article-items");
     } else{
       hiddenItems[1].style.display = "block";
+      hiddenItems[0].style.display = "none";
+      hiddenItems[0].classList.add("lesson-items");
       hiddenItems[1].classList.remove("article-items");
     }
   });

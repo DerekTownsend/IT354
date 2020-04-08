@@ -106,6 +106,9 @@ ul.nav li {
 ul.hidden-items li {
   margin-right: 0;
 }
+ul.hidden-items li{
+  font-size: 1.1em;
+}
 
 .nav a {
   text-decoration: none;
@@ -187,6 +190,7 @@ ul.lesson-list{
   position: absolute;
   flex-direction: column;
   margin-top: 2em;
+  min-width: 7em;
   top: 2.55em;
   left: 14.5em;
   background-color: rgb(225, 239, 246);
@@ -201,6 +205,7 @@ ul.article-list{
   position: absolute;
   flex-direction: column;
   margin-top: 2em;
+  min-width: 7em;
   top: 2.55em;
   left: 21.5em;
   background-color: rgb(225, 239, 246);
@@ -337,6 +342,7 @@ iframe {
 
   ul.nav.responsive li{
     display:block;
+    text-align: center;
   }
   .home p{
     font-size: 1.2em;
