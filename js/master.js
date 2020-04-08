@@ -1,4 +1,6 @@
-// alert("hello")
+import * as counter from 'module';
+// var counter = require('./module');
+
 
 function navigation() {
   let icon = document.getElementById("icon");
@@ -43,5 +45,10 @@ function navigation() {
 
 function run() {
   navigation()
+  console.log(counter.counter); // 1
+  counter.increment();
+  console.log(counter.counter); // 2
+  // counter.increment();
+  // console.log(counter.counter); // 1
 }
 run()
