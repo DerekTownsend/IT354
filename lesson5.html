@@ -42,6 +42,10 @@
             <li>
               <a href="lesson4.html">Prototypal Inheritance</a>
             </li>
+            <li>
+              <a href="lesson5.html">Modules</a>
+            </li>
+
           </ul>
 
         <li id="article-nav"><button type="button" name="button">Articles</button></li>
@@ -77,6 +81,26 @@
         <p>Sections of code that are highly reuseable because they preform a specific task that is needed throughout the project. Makes it so that if the code needs to be modified you only have to change it in one place rather than in every section that the code is used. Helps us remain consistent when it comes to the principle of not repeating ourselves.</p>
         <div class="codeSnippet">
           <pre><code>
+// src/calculator.js
+export function add(x,y) {
+  return x+y;
+}
+
+export function subtract(x,y) {
+  return x-y;
+}
+export function multiply(x,y) {
+  return x*y;
+}
+
+export function divide(x,y) {
+  return x/y;
+}
+
+// src/main.js
+import * as calculator from 'calculator';
+console.log(calculator.add(1,2)); // 3
+console.log(calculator.subtract(1,2)); // -1
 
         </code></pre>
         </div>
@@ -84,13 +108,26 @@
         <p>These are functions that return another function. It allows for you to modularize your code and make it more reuseable. Allows for you to reuse functions and modifiy what they do as you need them. We can now write more dynamic code.</p>
         <div class="codeSnippet">
           <pre><code>
-
+function powerOf(exponent){
+  return function(number){
+    return number ** exponent
+  }
+}
+let square = powerOf(2) //this will return a function that can be used to square any value that is inputed into it
+let cube = powerOf(3) //this will return a function that can be used to cube any value that is inputed into it
         </code></pre>
         </div>
         <h3>Advanced Array Methods</h3>
         <p>Many of these exist and they let you iterate through an array and modify the the contents within and return the modified array or results.</p>
         <div class="codeSnippet">
           <pre><code>
+let bookSeries = [{id:1,pages:250,title:"Dave Takes The World"},{id:3,pages:350,title:"Dave Saves The World"},{id:2,pages:150,title:"Dave Destroys The World"}]
+
+bookSeries.filter(book => book.pages >= 200) // returns only the books with the page count greater than 200
+
+bookSeries.map(book => book.pages + 200) // returns all the books but ups the page count by 200
+
+bookSeries.pop() // removes the last element from the book series array.
 
         </code></pre>
         </div>
