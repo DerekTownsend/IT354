@@ -98,6 +98,11 @@ ul.nav {
   align-items: flex-end;
 
 }
+.lesson-img{
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
 ul.nav li {
   font-size: 1.4em;
   padding: 0.5em;
@@ -154,7 +159,7 @@ ul.hidden-items li:first-child{
   margin: 0 auto;
   border-radius: .5em;
   background-color: black;
-  color: green;
+  color: white;
 }
 pre {
  white-space: pre-wrap;

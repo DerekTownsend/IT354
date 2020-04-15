@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lesson 6</title>
+  <link rel="stylesheet" href="css/master.css" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo(favicon).png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <header>
+
+    <nav>
+
+      <ul class="nav" id="myTopNav">
+        <li>
+          <a href="index.html">
+            <img src="images/logo.svg" class="nav-logo" alt="logo">
+          </a>
+        </li>
+        <li></li>
+        <li class="active">
+          <a href="index.html">Home</a>
+        </li>
+
+        <li id="lesson-nav"><button type="button" name="button">Lessons</button></li>
+          <ul class="hidden-items lesson-items lesson-list">
+            <li>
+              <a href="lesson1.html">Values and Types</a>
+            </li>
+            <li>
+              <a href="lesson2.html">Functions</a>
+            </li>
+            <li>
+              <a href="lesson3.html">Objects</a>
+            </li>
+            <li>
+              <a href="lesson4.html">Prototypal Inheritance</a>
+            </li>
+            <li>
+              <a href="lesson5.html">Modules</a>
+            </li>
+            <li>
+              <a href="lesson6.html">API</a>
+            </li>
+
+          </ul>
+
+        <li id="article-nav"><button type="button" name="button">Articles</button></li>
+          <ul class="hidden-items article-items article-list">
+            <li>
+              <a href="article1.html">History of ECMAScript</a>
+            </li>
+            <li>
+              <a href="article2.html">Responsive Design</a>
+            </li>
+            <li>
+              <a href="article3.html">Microservices vs. Monolith</a>
+            </li>
+          </ul>
+        <li id="icon" class="icon">
+          <button>&#9776;</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <ul class="lesson-nav">
+    <li><a href="lesson1.html">Values and Types</a></li>
+    <li><a href="lesson2.html">Functions</a></li>
+    <li><a href="lesson3.html">Objects</a></li>
+    <li><a href="lesson4.html">Prototypal Inheritance</a></li>
+    <li><a href="lesson5.html">Modules</a></li>
+    <li id="active"><a href="lesson6.html">API</a></li>
+  </ul>
+  <main>
+    <h1>API</h1>
+    <section>
+      <div>
+        <h2>Application Programming Interface</h2>
+        <p>An API is the way that we can interact with the information on our server or backend. The API is responsible for handling the https requests that we make, and will return some information in JSON format (most likely). The ultimate goal of an API is to help spit responsibilites and make it easier to make changes on the server. It relies heavily on RESTful programming.</p>
+        <h3>REST</h3>
+        <p>Representative State Transfrer is an architectural style that revolves around the usage of HTTP requests to transfer information between client and server when using web based applications. Javascript processes this information through fetch requests.</p>
+        <ul>
+          <li>A GET request will retrieve information from the backend, and the frontend will display this information however we need it. The example would be when you are looking at a the comments on a youtube video. A GET request is made once you scroll to the  bottom of the page and it checks if another set of comments can be retrieved.</li>
+          <div class="codeSnippet">
+            <pre><code>
+// GET Request
+fetch(LIBRARY_ITEMS_URL)
+.then(response => response.json())
+.then(json => displayItems(json))
+          </code></pre>
+          </div>
+          <li>A POST request occurs most often when you want send information to the backend to create something new. An example would be when you are registering for an account on a website. When you hit that register button you are sending a post request with the information you put into the text fields in the body of the request. The API send this information to the backend and you are added to the database. A response is sent back confirming this action along with the newly created user information.</li>
+          <div class="codeSnippet">
+            <pre><code>
+// POST Request
+const bodyObj = {
+    number: number,
+    library_item_attributes: commonItems
+  }
+  const reqObj = {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(bodyObj)
+  }
+
+  fetch(JOURNALS_URL, reqObj)
+  .then(response => response.json())
+  .then((json) => {
+    displayItem(json, json.libraryable);
+  })
+          </code></pre>
+          </div>
+          <li>A PATCH/PUT request is used to update data on the backend. If you try to change your username or password you will be sending one of these requests with the new information.</li>
+          <div class="codeSnippet">
+            <pre><code>
+// PATCH Request
+const id = `/${item.dataset.libraryId}`;
+  let editURL = MAGAZINES_URL + id;
+  const bodyObj = {
+    type_of_mag: type,
+    date_of_pub: dateOfPub,
+    library_item_attributes: commonItems
+  }
+  const reqObj = {
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(bodyObj)
+  }
+
+  fetch(editURL, reqObj)
+  .then(response => response.json())
+  .then((json) => {
+    displayItem(json, json.libraryable);
+  })
+          </code></pre>
+          </div>
+          <li>A DELETE request does exactly what it sounds like and will remove whatever information is requested from the backend. If you want to delete your post it will remove the post and any information associated with it.</li>
+          <div class="codeSnippet">
+            <pre><code>
+//DELETE Request
+const id = `/${item.dataset.libraryId}`;
+let deleteURL;
+const reqObj ={
+  method: "DELETE"
+}
+
+if (item.dataset.libraryType == "Book") {
+  deleteURL = BOOKS_URL + id;
+}else if (item.dataset.libraryType == "Journal") {
+  deleteURL = JOURNALS_URL + id;
+}else if (item.dataset.libraryType == "Magazine") {
+  deleteURL = MAGAZINES_URL + id;
+}else if (item.dataset.libraryType == "ConferenceProceeding") {
+  deleteURL = CONFERENCE_PROCEEDINGS_URL + id;
+}
+
+fetch(deleteURL, reqObj)
+.then(response => response.json())
+.then(json => {
+  removeItemLocally(item)
+  // console.log(currentLoggedInUser);
+})
+          </code></pre>
+          </div>
+        </ul>
+        <h3>Postman</h3>
+        <p>This application is used to test the data that an API will send back once one of these requests are made. It allows for you to better understand the API that you are working with, and it can make it easier for you to plan how to utilize this information. You specify the the type of request you want to make, enter the url, add any information(params, authorizations, or body values) that you want to send, and view the results at the bottom. </p>
+        <img class="lesson-img" src="images/postman-example.png" alt="postman screenshot">
+      </div>
+      <hr>
+      <div>
+        <h2>Video Summary</h2>
+        <iframe src="https://www.youtube.com/embed/V_SjYfUjEDY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/derektownsend" target="_blank">
+      <i class="fab fa-github fa-4x"></i>
+    </a>
+    <a href="https://linkedin.com/in/derek-townsend-10697012a" target="_blank">
+      <i class="fab fa-linkedin fa-4x"></i>
+    </a>
+    <a href="mailto:derek@coderspace.org" target="_blank">
+      <i class="fas fa-envelope fa-4x"></i>
+    </a>
+  </footer>
+  <script src="js/master.js"></script>
+</body>
+
+</html>
