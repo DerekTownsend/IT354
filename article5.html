@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Microservices vs. Monolith</title>
+  <title>Node</title>
   <link rel="stylesheet" href="css/master.css" type="text/css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="icon" type="image/png" sizes="32x32" href="images/logo(favicon).png">
@@ -45,6 +45,9 @@
             <li>
               <a href="lesson5.html">Modules</a>
             </li>
+            <li>
+              <a href="lesson6.html">API</a>
+            </li>
           </ul>
 
         <li id="article-nav"><button type="button" name="button">Articles</button></li>
@@ -58,6 +61,9 @@
             <li>
               <a href="article3.html">Microservices vs. Monolith</a>
             </li>
+            <li>
+              <a href="article5.html">Node</a>
+            </li>
           </ul>
         <li id="icon" class="icon">
           <button>&#9776;</button>
@@ -68,23 +74,20 @@
   <ul class="lesson-nav">
     <li><a href="article1.html">History of ECMAScript</a></li>
     <li><a href="article2.html">Responsive Design</a></li>
-    <li id="active"><a href="article3.html">Microservices vs. Monolith</a></li>
+    <li><a href="article3.html">Microservices vs. Monolith</a></li>
+    <li id="active"><a href="article5.html">Node</a></li>
   </ul>
   <main>
-    <h1>Microservices vs. Monolith</h1>
+    <h1>Node</h1>
     <section>
       <div class="article">
-        <p>Microservices applications spit the work into smaller teams and APIs. These APIs then handle some of the logistics for you. Several teams will be working on these so that the code and its effect on the business is well understood. The benefit to this system is that there should be no parts of the code that no one understands. Also the system is easier to scale and maintain.</p>
-        <p>The main problem I have with this is that I feel like relying on multiple APIs can lead to incompatibilities popping up and restricting future changes or growth. Also I feel like this is more tailored to larger companies and not to small start ups. If you manage and maintain the applications yourself then you can cut out the middleman and possibly save the company money in the long term  because as your needs grow the more resources you are giving to another company to manage something you can probably do yourself after a certain point.</p>
-        <p>Monolith applications are built withe the database, frontend, and backend all maintained by the company but as it grows become a bit of a tangled mess. But the trade off seems to be more direct control over all aspects of your code</p>
-        <!-- <h2></h2>
-        <p></p>
-        <p></p>
-        <p></p> -->
+        <p>Node is a JavaScript runtime enviroment that allows for you to use and exceute JS scripts within a server enviroment. Plenty of many popular JS frameworks and libraries are built upon Node and they have changed the way we use JS as a whole. Uses the V8-JS engine which powers chrome and allows for us to execute our JS commands in the browser. The fact that V8 was made the core of chrome allowed for Nodes popularity to surge and revolutionize JS. </p>
+        <p>V8 was coded in C++ and has several iterations as time has passed on. The core reason being that they strive to improve browser preformance as best as possible. Having a slow browser is essentially a death sentence and as time progresses we expect faster and more effecient allocation of browser resources. With the newest iteration of the engine ES6's syntactic sugar and other features were added excluding modules. </p>
         <div class="sources">
           <ul>
             <h2>References:</h2>
-            <li><a href="https://www.mulesoft.com/resources/api/microservices-vs-monolithic">Microservices vs Monolithic Architecture</a></li>
+            <li><a href="https://nodejs.dev/the-v8-javascript-engine">The V8 JavaScript Engine</a></li>
+            <li><a href="https://developers.google.com/apps-script/guides/v8-runtime">V8 Runtime Overview</a></li>
           </ul>
         </div>
       </div>
